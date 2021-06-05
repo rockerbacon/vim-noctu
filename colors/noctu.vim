@@ -1,6 +1,7 @@
 " noctu.vim - Vim color scheme for 16-color terminals
 " --------------------------------------------------------------
 " Author:   Noah Frederick (http://noahfrederick.com/)
+" Modified by: Vitor Santos (https://github.com/rockerbacon/)
 " Version:  1.8.0
 " --------------------------------------------------------------
 
@@ -16,28 +17,27 @@ let g:colors_name = "noctu"
 
 "}}}
 " Vim UI {{{
+
 hi Normal              ctermfg=7
 hi Cursor              ctermfg=7     ctermbg=1
 hi CursorLine          ctermbg=0     cterm=NONE
-hi MatchParen          ctermfg=7     ctermbg=NONE  cterm=underline
+hi MatchParen          ctermfg=10    ctermbg=NONE  cterm=underline
 hi Pmenu               ctermfg=15    ctermbg=0
-hi PmenuThumb          ctermbg=7
+hi PmenuThumb          ctermfg=0     ctermbg=7
 hi PmenuSBar           ctermbg=8
 hi PmenuSel            ctermfg=0     ctermbg=4
 hi ColorColumn         ctermbg=0
-hi SpellBad            ctermfg=1     ctermbg=NONE  cterm=underline
-hi SpellCap            ctermfg=10    ctermbg=NONE  cterm=underline
-hi SpellRare           ctermfg=11    ctermbg=NONE  cterm=underline
-hi SpellLocal          ctermfg=13    ctermbg=NONE  cterm=underline
-hi NonText             ctermfg=8
-hi LineNr              ctermfg=8     ctermbg=NONE
-hi CursorLineNr        ctermfg=11    ctermbg=0
+hi SpellBad            ctermfg=1     ctermbg=NONE  cterm=undercurl
+hi SpellRare           ctermfg=11    ctermbg=NONE  cterm=undercurl
+hi NonText             ctermfg=8     cterm=bold
+hi LineNr              ctermfg=7     ctermbg=0
+hi CursorLineNr        ctermfg=8     ctermbg=7
 hi Visual              ctermfg=0     ctermbg=12
 hi IncSearch           ctermfg=0     ctermbg=13    cterm=NONE
-hi Search              ctermfg=0     ctermbg=10
+hi Search              ctermfg=0     ctermbg=3
 hi StatusLine          ctermfg=7     ctermbg=0     cterm=bold
 hi StatusLineNC        ctermfg=8     ctermbg=0     cterm=bold
-hi VertSplit           ctermfg=0     ctermbg=0     cterm=NONE
+hi VertSplit           ctermfg=8     ctermbg=0     cterm=NONE
 hi TabLine             ctermfg=8     ctermbg=0     cterm=NONE
 hi TabLineSel          ctermfg=7     ctermbg=0
 hi Folded              ctermfg=6     ctermbg=0     cterm=bold
@@ -45,6 +45,7 @@ hi Conceal             ctermfg=6     ctermbg=NONE
 hi Directory           ctermfg=12
 hi Title               ctermfg=3     cterm=bold
 hi ErrorMsg            ctermfg=15    ctermbg=1
+hi WarningMsg          ctermfg=15    ctermbg=14
 hi DiffAdd             ctermfg=0     ctermbg=2
 hi DiffChange          ctermfg=0     ctermbg=3
 hi DiffDelete          ctermfg=0     ctermbg=1
@@ -58,16 +59,20 @@ hi User6               ctermfg=6     ctermbg=0
 hi User7               ctermfg=7     ctermbg=0
 hi User8               ctermfg=8     ctermbg=0
 hi User9               ctermfg=15    ctermbg=5
-hi! link CursorColumn  CursorLine
-hi! link SignColumn    LineNr
-hi! link WildMenu      Visual
-hi! link FoldColumn    SignColumn
-hi! link WarningMsg    ErrorMsg
-hi! link MoreMsg       Title
-hi! link Question      MoreMsg
-hi! link ModeMsg       MoreMsg
-hi! link TabLineFill   StatusLineNC
-hi! link SpecialKey    NonText
+hi RedrawDebugClear    ctermfg=8     ctermbg=14
+hi RedrawDebugComposed ctermfg=8     ctermbg=10
+hi! link SpellCap           SpellRare
+hi! link SpellLocal         SpellRare
+hi! link CursorColumn       CursorLine
+hi! link SignColumn         LineNr
+hi! link WildMenu           Visual
+hi! link FoldColumn         SignColumn
+hi! link MoreMsg            Title
+hi! link Question           MoreMsg
+hi! link ModeMsg            MoreMsg
+hi! link TabLineFill        StatusLineNC
+hi! link SpecialKey         NonText
+hi! link NvimInternalError  ErrorMsg
 
 "}}}
 " Generic syntax {{{
@@ -75,18 +80,18 @@ hi Delimiter       ctermfg=7
 hi Comment         ctermfg=8
 hi Underlined      ctermfg=4   cterm=underline
 hi Type            ctermfg=4
-hi String          ctermfg=11
+hi String          ctermfg=13
 hi Keyword         ctermfg=2
 hi Todo            ctermfg=15  ctermbg=NONE     cterm=bold,underline
-hi Function        ctermfg=4
+hi Function        ctermfg=4   cterm=underline
 hi Identifier      ctermfg=7   cterm=NONE
 hi Statement       ctermfg=2   cterm=bold
 hi Constant        ctermfg=13
 hi Number          ctermfg=12
-hi Boolean         ctermfg=4
+hi Boolean         ctermfg=13
 hi Special         ctermfg=13
-hi Ignore          ctermfg=0
-hi PreProc         ctermfg=8   cterm=bold
+hi Ignore          ctermfg=8
+hi PreProc         ctermfg=4   cterm=bold
 hi! link Operator  Delimiter
 hi! link Error     ErrorMsg
 
@@ -166,9 +171,9 @@ hi! link gitCommitDiscardedFile  gitCommitUnmergedFile
 
 "}}}
 " Vim {{{
-hi! link vimSetSep    Delimiter
-hi! link vimContinue  Delimiter
-hi! link vimHiAttrib  Constant
+hi! link vimSetSep        Delimiter
+hi! link vimContinue      Delimiter
+hi! link vimHiAttrib      Constant
 
 "}}}
 " LESS {{{
