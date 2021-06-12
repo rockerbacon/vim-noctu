@@ -1,5 +1,8 @@
 # noctu.vim
 
+This is a fork of [vim-noctu](https://github.com/noahfrederick/vim-noctu) tailored to my personal preferences.
+
+
 ## A Vim color scheme for 16-color terminals
 
 Actually, this color scheme has a more specific use. Rather than specifying
@@ -26,27 +29,3 @@ The color scheme has been tested against the following file types:
 - Vimwiki
 - XML
 - YAML
-
-## Appearance
-
-Here's what Noctu looks like in OS X's Terminal.app with a custom theme:
-
-![Screen shot of Terminal](example.png)
-
-Notice that vim, tmux, and the output from git-log share the same palette.
-
-## Installation
-
-Just stick `noctu.vim` in your `colors/` directory, or if you manage your
-plug-ins with [pathogen][1]:
-
-	git clone git://github.com/noahfrederick/vim-noctu.git ~/.vim/bundle/noctu
-
-You can find the latest version of this scheme in the [GitHub repository][2].
-If you're looking for a color scheme for GUI Vim, you may be interested in
-[Hemisu][3] by the same author.
-
-
-[1]: https://github.com/tpope/vim-pathogen
-[2]: https://github.com/noahfrederick/vim-noctu
-[3]: https://github.com/noahfrederick/Hemisu
